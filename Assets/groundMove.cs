@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class groundMove : MonoBehaviour
 {
+    public float speed = 0.01f;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,8 @@ public class groundMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position + new Vector3(0, 0, 0.01f);
+        if(transform.position.z < 100000) { 
+            transform.position = transform.position + new Vector3(0, 0, speed);
+        }
     }
 }
